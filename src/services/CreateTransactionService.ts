@@ -23,7 +23,6 @@ class CreateTransactionService {
     const balance = await repository.getBalance();
 
     if (type === 'outcome' && balance.total < value) {
-      console.log(balance, title);
       throw new AppError('Not authorized', 400);
     }
 
